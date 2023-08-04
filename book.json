@@ -1,0 +1,16 @@
+{
+    "gitbook": ">=3.2.0",
+    "links": {
+        "sidebar": {
+            "Need help? Talk to us!": "https://test.com"
+        }
+    },
+    "plugins": [
+        "language-picker"
+    ],
+    "pluginsConfig": {
+        "language-picker": {
+            "grid-columns": 3
+        }
+    }
+}
