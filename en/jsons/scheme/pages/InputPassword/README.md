@@ -1,0 +1,4 @@
+# InputPassword
+
+> Текст для InputPassword.
+

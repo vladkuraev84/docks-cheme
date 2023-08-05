@@ -1,0 +1,4 @@
+# MultiBox
+
+> Текст для MultiBox.
+

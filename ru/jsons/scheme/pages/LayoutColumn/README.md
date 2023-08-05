@@ -1,0 +1,4 @@
+# LayoutColumn
+
+> Текст для LayoutColumn.
+

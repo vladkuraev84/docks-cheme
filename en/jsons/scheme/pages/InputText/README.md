@@ -1,0 +1,4 @@
+# InputText
+
+> Текст для InputText.
+
