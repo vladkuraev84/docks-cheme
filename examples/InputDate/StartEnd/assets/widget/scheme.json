@@ -33,7 +33,7 @@
 			},
 			{
 				"name": "menu",
-				"enable": false,
+				"enable": true,
 				"config": {
 					"list": [
 						{
