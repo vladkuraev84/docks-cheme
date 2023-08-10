@@ -1,0 +1,194 @@
+{
+	"config": {
+		"step_by_step": "strict",
+		"modules": [
+			{
+				"name": "auth",
+				"enable": false
+			},
+			{
+				"name": "sign",
+				"enable": false
+			},
+			{
+				"name": "pay",
+				"enable": false
+			},
+			{
+				"name": "datepicker",
+				"enable": true,
+				"config": {
+					"locales": {
+						"relations": {
+							"ua": "uk",
+							"fr": "fr"
+						}
+					},
+					"forEachField": {
+						"format": "mm/dd/yyyy",
+						"autohide": true,
+						"todayHighlight": true
+					}
+				}
+			},
+			{
+				"name": "menu",
+				"enable": false,
+				"config": {
+					"list": []
+				}
+			}
+		],
+		"apiBaseUrl": "http://localhost:8081/api/",
+		"localization": {
+			"defaultLang": "en",
+			"availableLangs": ["en", "fr", "ua", "ru"]
+		},
+		"styles": {
+			"value": [
+				"form-widget-g .fieldset-title p { margin-bottom: 20px; }",
+				"form-widget-g .bordered-block { border: 1px solid #565656; border-radius: 6px; padding: 10px; padding-bottom: 0px; margin-bottom: 20px; }",
+				"form-widget-g .field-inform-text { font-size: 0.7rem; }"
+			]
+		},
+		"variables": {
+			"selectorCountryList": {
+				"AL": "#Alabama",
+				"AK": "#Alaska",
+				"AZ": "#Arizona",
+				"AR": "#Arkansas",
+				"CA": "#California",
+				"CO": "#Colorado",
+				"CT": "#Connecticut",
+				"DE": "#Delaware",
+				"DC": "#District Of Columbia",
+				"FL": "#Florida",
+				"GA": "#Georgia",
+				"HI": "#Hawaii",
+				"ID": "#Idaho",
+				"IL": "#Illinois",
+				"IN": "#Indiana",
+				"IA": "#Iowa",
+				"KS": "#Kansas",
+				"KY": "#Kentucky",
+				"LA": "#Louisiana",
+				"ME": "#Maine",
+				"MD": "#Maryland",
+				"MA": "#Massachusetts",
+				"MI": "#Michigan",
+				"MN": "#Minnesota",
+				"MS": "#Mississippi",
+				"MO": "#Missouri",
+				"MT": "#Montana",
+				"NE": "#Nebraska",
+				"NV": "#Nevada",
+				"NH": "#New Hampshire",
+				"NJ": "#New Jersey",
+				"NM": "#New Mexico",
+				"NY": "#New York",
+				"NC": "#North Carolina",
+				"ND": "#North Dakota",
+				"OH": "#Ohio",
+				"OK": "#Oklahoma",
+				"OR": "#Oregon",
+				"PA": "#Pennsylvania",
+				"RI": "#Rhode Island",
+				"SC": "#South Carolina",
+				"SD": "#South Dakota",
+				"TN": "#Tennessee",
+				"TX": "#Texas",
+				"UT": "#Utah",
+				"VT": "#Vermont",
+				"VA": "#Virginia",
+				"WA": "#Washington",
+				"WV": "#West Virginia",
+				"WI": "#Wisconsin",
+				"WY": "#Wyoming"
+			}
+		}
+	},
+	"pages": [
+		{
+			"id": 6,
+			"key": "work-history",
+			"description": "work history",
+
+					"components": [
+
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"enable": true,
+										"type": "InputDate",
+										"model": "startDate"
+									},
+									"custom": {
+										"mask": "##/##/####",
+										"hint": "#format: mm/dd/yyyy",
+										"workTogether": {
+											"selfIdentify": "START",
+											"purposeModel": "endDate",
+											"validateText": "#Start date can't be bigger than finish date."
+										}
+									},
+									"module": {
+										"minDate": "01/01/1920"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required",
+											"range": "#The date falls outside of the acceptable range.",
+											"notValid": "#This is not a valid date."
+										}
+									},
+									"text": {
+										"placeholder": "#example: 12/25/2000",
+										"label": "#Start date"
+									}
+								},
+								{
+									"common": {
+										"enable": true,
+										"type": "InputDate",
+										"model": "endDate"
+									},
+									"custom": {
+										"mask": "##/##/####",
+										"hint": "#format: mm/dd/yyyy",
+										"workTogether": {
+											"selfIdentify": "END",
+											"purposeModel": "startDate",
+											"validateText": "#Finish date can't be smaller than start date"
+										}
+									},
+									"module": {
+										"minDate": "01/01/1920"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required",
+											"range": "#The date falls outside of the acceptable range.",
+											"notValid": "#This is not a valid date."
+										}
+									},
+									"text": {
+										"placeholder": "#example: 12/25/2000",
+										"label": "#End date"
+									}
+								}
+							]
+						}
+					]
+
+		}
+	]
+}

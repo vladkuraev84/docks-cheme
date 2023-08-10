@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Form widget</title>
+
+		<link rel="stylesheet" href="./assets/css/site.css" />
+		<link rel="stylesheet" href="./assets/widget/main.css" />
+		<script src="./assets/js/site.js" defer></script>
+		<script src="./assets/widget/widget-form-loader.min.js" defer></script>
+		<script src="./assets/widget/form-widget-g.js" defer></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="content">
+				<header class="header">
+					<button class="btn-theme" onclick="changeTheme()">
+						<span class="--light">&#9728;</span>
+						<span class="--dark">&#9789;</span>
+					</button>
+				</header>
+
+				<form-widget-g
+					data-project-id="62508e2544f0831be0b66a0b"
+					data-path="/dsite/dist/assets/widget"
+					data-page="work-history"
+					data-language="en"
+					data-theme="light"
+					data-dump-model="true"
+				></form-widget-g>
+
+				<div class="footer">
+					<p>&copy; <span id="year"></span> Company Global.</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
