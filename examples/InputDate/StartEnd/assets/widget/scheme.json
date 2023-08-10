@@ -37,9 +37,9 @@
 				"config": {
 					"list": [
 						{
-							"id": 6,
-							"pageId": 6,
-							"position": 1,
+							"id": 61,
+							"pageId": 61,
+							"position": 61,
 							"enable": true,
 							"title": "menu.work-history"
 						}
@@ -117,9 +117,9 @@
 	},
 	"pages": [
 		{
-			"id": 6,
-			"key": "work-history",
-			"description": "work history",
+			"id": 61,
+			"key": "wh",
+			"description": "wh",
 
 					"components": [
 
