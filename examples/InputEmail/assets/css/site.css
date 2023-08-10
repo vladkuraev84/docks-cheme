@@ -1,20 +1,20 @@
 @font-face {
 	font-family: 'Montserrat';
 	src: url('./font/montserrat-light.otf');
-	src:
+	/*src:
 		url('./font/montserrat-light.woff2') format('woff2'),
 		url('./font/montserrat-light.woff') format('woff'),
-		url('./font/montserrat-light.ttf');
+		url('./font/montserrat-light.ttf');*/
 	font-weight: 300;
 }
 
 @font-face {
 	font-family: 'Montserrat';
 	src: url('./font/montserrat-regular.otf');
-	src:
+	/*src:
 		url('./font/montserrat-regular.woff2') format('woff2'),
 		url('./font/montserrat-regular.woff') format('woff'),
-		url('./font/montserrat-regular.ttf');
+		url('./font/montserrat-regular.ttf');*/
 	font-weight: 400;
 }
 
