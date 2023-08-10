@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gitbook-plugin-language-picker": "*",
     "gitbook-plugin-include-html": "*",
+    "gitbook-plugin-language-picker": "*",
     "honkit": "^5.0.0"
+  },
+  "dependencies": {
+    "render-markdown-js": "^1.3.0"
   }
 }
