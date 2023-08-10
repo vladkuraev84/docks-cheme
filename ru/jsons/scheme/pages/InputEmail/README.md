@@ -5,5 +5,5 @@
 [//]: # (!INCLUDE "index.html")
 
 <iframe  frameborder="0"
-style=" width: 100%; height: 322px" src="https://docks-demo.netlify.app/examples/InputEmail/inputEmail.html">
+style=" width: 100%; height: 322px" src="https://docks-demo.netlify.app/examples/InputEmail/inputEmail.html?ver=2">
 </iframe>
