@@ -121,81 +121,81 @@
 			"key": "wh",
 			"description": "wh",
 
-					"components": [
+			"components": [
 
+				{
+					"common": {
+						"type": "LayoutContainer",
+						"class": {
+							"container": "g-2-cols"
+						}
+					},
+					"components": [
 						{
 							"common": {
-								"type": "LayoutContainer",
-								"class": {
-									"container": "g-2-cols"
+								"enable": true,
+								"type": "InputDate",
+								"model": "startDate"
+							},
+							"custom": {
+								"mask": "##/##/####",
+								"hint": "#format: mm/dd/yyyy",
+								"workTogether": {
+									"selfIdentify": "START",
+									"purposeModel": "endDate",
+									"validateText": "#Start date can't be bigger than finish date."
 								}
 							},
-							"components": [
-								{
-									"common": {
-										"enable": true,
-										"type": "InputDate",
-										"model": "startDate"
-									},
-									"custom": {
-										"mask": "##/##/####",
-										"hint": "#format: mm/dd/yyyy",
-										"workTogether": {
-											"selfIdentify": "START",
-											"purposeModel": "endDate",
-											"validateText": "#Start date can't be bigger than finish date."
-										}
-									},
-									"module": {
-										"minDate": "01/01/1920"
-									},
-									"validation": {
-										"required": true,
-										"texts": {
-											"required": "errors.required",
-											"range": "#The date falls outside of the acceptable range.",
-											"notValid": "#This is not a valid date."
-										}
-									},
-									"text": {
-										"placeholder": "#example: 12/25/2000",
-										"label": "#Start date"
-									}
-								},
-								{
-									"common": {
-										"enable": true,
-										"type": "InputDate",
-										"model": "endDate"
-									},
-									"custom": {
-										"mask": "##/##/####",
-										"hint": "#format: mm/dd/yyyy",
-										"workTogether": {
-											"selfIdentify": "END",
-											"purposeModel": "startDate",
-											"validateText": "#Finish date can't be smaller than start date"
-										}
-									},
-									"module": {
-										"minDate": "01/01/1920"
-									},
-									"validation": {
-										"required": true,
-										"texts": {
-											"required": "errors.required",
-											"range": "#The date falls outside of the acceptable range.",
-											"notValid": "#This is not a valid date."
-										}
-									},
-									"text": {
-										"placeholder": "#example: 12/25/2000",
-										"label": "#End date"
-									}
+							"module": {
+								"minDate": "01/01/1920"
+							},
+							"validation": {
+								"required": true,
+								"texts": {
+									"required": "errors.required",
+									"range": "#The date falls outside of the acceptable range.",
+									"notValid": "#This is not a valid date."
 								}
-							]
+							},
+							"text": {
+								"placeholder": "#example: 12/25/2000",
+								"label": "#Start date"
+							}
+						},
+						{
+							"common": {
+								"enable": true,
+								"type": "InputDate",
+								"model": "endDate"
+							},
+							"custom": {
+								"mask": "##/##/####",
+								"hint": "#format: mm/dd/yyyy",
+								"workTogether": {
+									"selfIdentify": "END",
+									"purposeModel": "startDate",
+									"validateText": "#Finish date can't be smaller than start date"
+								}
+							},
+							"module": {
+								"minDate": "01/01/1920"
+							},
+							"validation": {
+								"required": true,
+								"texts": {
+									"required": "errors.required",
+									"range": "#The date falls outside of the acceptable range.",
+									"notValid": "#This is not a valid date."
+								}
+							},
+							"text": {
+								"placeholder": "#example: 12/25/2000",
+								"label": "#End date"
+							}
 						}
 					]
+				}
+			]
 
 		}
 	]
