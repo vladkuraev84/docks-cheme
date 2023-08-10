@@ -40,9 +40,15 @@
 </div>
 <script>
     // window.location.reload();
-    setTimeout(function(){
+    /*setTimeout(function(){
         location.reload();
-    }, 50000);
+    }, 50000);*/
+    if (localStorage.getItem("reload") === "false") {
+        localStorage.removeItem("reload");
+    } else {
+        localStorage.setItem("reload", "false");
+        window.location = window.location;
+    }
 </script>
 </body>
 </html>
