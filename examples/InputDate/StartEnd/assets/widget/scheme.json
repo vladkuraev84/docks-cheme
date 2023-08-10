@@ -37,11 +37,11 @@
 				"config": {
 					"list": [
 						{
-							"id": 1,
-							"pageId": 1,
+							"id": 6,
+							"pageId": 6,
 							"position": 1,
 							"enable": true,
-							"title": "menu.welcome"
+							"title": "menu.work-history"
 						}
 					]
 				}
