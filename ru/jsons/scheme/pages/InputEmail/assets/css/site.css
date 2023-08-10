@@ -1,0 +1,159 @@
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../font/montserrat-light.otf');
+	src:
+		url('../font/montserrat-light.woff2') format('woff2'),
+		url('../font/montserrat-light.woff') format('woff'),
+		url('../font/montserrat-light.ttf');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Montserrat';
+	src: url('../font/montserrat-regular.otf');
+	src:
+		url('../font/montserrat-regular.woff2') format('woff2'),
+		url('../font/montserrat-regular.woff') format('woff'),
+		url('../font/montserrat-regular.ttf');
+	font-weight: 400;
+}
+
+:root {
+	--boxShadow: hsl(0, 0%, 0%, 28%);
+	--darkBg: hsl(210, 2%, 16%);
+	--colorElBtnTheme: #b3b3b3;
+	--colorLightElBtnTheme: #f1f1f1;
+	--colorDarkElBtnTheme: #202020;
+}
+
+*,
+::after,
+::before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+}
+
+/*themes*/
+body[data-theme='dark'] {
+	background-color: var(--darkBg);
+}
+
+/*layouts*/
+.wrapper {
+	position: relative;
+	min-height: 100vh;
+	padding: 0.63rem;
+}
+
+.header {
+	margin-bottom: 24px;
+}
+
+.content {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0.63em;
+	border-radius: 0.19em;
+	box-shadow: 0px 0px 3px 1px var(--boxShadow);
+}
+
+.footer {
+	position: relative;
+	margin-top: 1rem;
+	padding: 1rem 0.63rem 0;
+	text-align: center;
+	color: #808080;
+	font-size: 11px;
+	font-weight: 300;
+}
+
+.footer:after {
+	position: absolute;
+	top: 0;
+	right: 5%;
+	left: 5%;
+	height: 0px;
+	content: '';
+	opacity: 0.5;
+	box-shadow: 0px 0px 3px 1px var(--boxShadow);
+}
+
+body[data-theme='dark'] .footer:after {
+	box-shadow: 0px 0px 3px 1px var(--boxShadow);
+}
+
+/*theme button*/
+body[data-theme='dark'] .btn-theme .--dark,
+body[data-theme='light'] .btn-theme .--light {
+	display: inline-block;
+}
+body[data-theme='dark'] .btn-theme .--light,
+body[data-theme='light'] .btn-theme .--dark {
+	display: none;
+}
+
+.btn-theme {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	margin: 0 0 0 auto;
+	padding: 2px;
+	cursor: pointer;
+	color: var(--colorElBtnTheme);
+	border: 1px solid var(--colorElBtnTheme);
+	border-radius: 50%;
+	outline: none !important;
+	background-color: transparent;
+	font-size: 20px;
+	line-height: 1;
+}
+
+.btn-theme span {
+	display: none;
+}
+
+body[data-theme='dark'] .btn-theme:hover {
+	color: var(--colorLightElBtnTheme);
+	background-color: var(--colorDarkElBtnTheme);
+}
+
+body[data-theme='light'] .btn-theme:hover {
+	color: var(--colorDarkElBtnTheme);
+	background-color: var(--colorLightElBtnTheme);
+}
+
+/* customize widget */
+@media only screen and (max-width: 767px) {
+	.wrapper .wdf-app {
+		/* bind the menu to the site, by default it is attached to the widget */
+		position: static;
+	}
+
+	.wrapper .wdf-burger {
+		top: 20px;
+		left: 20px;
+	}
+
+	.wrapper .wdf-app .menu {
+		padding-top: 3.63rem;
+	}
+}
+
+/* customize widget colors
+form-widget-g .wdf-app[data-theme=light] {
+	--wdfText: red !important;
+}
+form-widget-g .wdf-app[data-theme=dark] {
+	--wdfText: red !important;
+}
+*/

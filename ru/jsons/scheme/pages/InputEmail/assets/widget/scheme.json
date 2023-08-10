@@ -1,0 +1,1127 @@
+{
+	"config": {
+		"step_by_step": "strict",
+		"modules": [
+			{
+				"name": "auth",
+				"enable": false
+			},
+			{
+				"name": "sign",
+				"enable": false
+			},
+			{
+				"name": "pay",
+				"enable": false
+			},
+			{
+				"name": "datepicker",
+				"enable": true,
+				"config": {
+					"locales": {
+						"relations": {
+							"ua": "uk",
+							"fr": "fr"
+						}
+					},
+					"forEachField": {
+						"format": "mm/dd/yyyy",
+						"autohide": true,
+						"todayHighlight": true
+					}
+				}
+			},
+			{
+				"name": "menu",
+				"enable": false,
+				"config": {
+					"list": [
+					]
+				}
+			}
+		],
+		"apiBaseUrl": "http://localhost:8081/api/",
+		"localization": {
+			"defaultLang": "en",
+			"availableLangs": ["en", "fr", "ua", "ru"]
+		},
+		"styles": {
+			"value": [
+				"form-widget-g .fieldset-title p { margin-bottom: 20px; }",
+				"form-widget-g .bordered-block { border: 1px solid #565656; border-radius: 6px; padding: 10px; padding-bottom: 0px; margin-bottom: 20px; }",
+				"form-widget-g .field-inform-text { font-size: 0.7rem; }"
+			]
+		},
+		"variables": {
+			"selectorCountryList": {
+				"AL": "#Alabama",
+				"AK": "#Alaska",
+				"AZ": "#Arizona",
+				"AR": "#Arkansas",
+				"CA": "#California",
+				"CO": "#Colorado",
+				"CT": "#Connecticut",
+				"DE": "#Delaware",
+				"DC": "#District Of Columbia",
+				"FL": "#Florida",
+				"GA": "#Georgia",
+				"HI": "#Hawaii",
+				"ID": "#Idaho",
+				"IL": "#Illinois",
+				"IN": "#Indiana",
+				"IA": "#Iowa",
+				"KS": "#Kansas",
+				"KY": "#Kentucky",
+				"LA": "#Louisiana",
+				"ME": "#Maine",
+				"MD": "#Maryland",
+				"MA": "#Massachusetts",
+				"MI": "#Michigan",
+				"MN": "#Minnesota",
+				"MS": "#Mississippi",
+				"MO": "#Missouri",
+				"MT": "#Montana",
+				"NE": "#Nebraska",
+				"NV": "#Nevada",
+				"NH": "#New Hampshire",
+				"NJ": "#New Jersey",
+				"NM": "#New Mexico",
+				"NY": "#New York",
+				"NC": "#North Carolina",
+				"ND": "#North Dakota",
+				"OH": "#Ohio",
+				"OK": "#Oklahoma",
+				"OR": "#Oregon",
+				"PA": "#Pennsylvania",
+				"RI": "#Rhode Island",
+				"SC": "#South Carolina",
+				"SD": "#South Dakota",
+				"TN": "#Tennessee",
+				"TX": "#Texas",
+				"UT": "#Utah",
+				"VT": "#Vermont",
+				"VA": "#Virginia",
+				"WA": "#Washington",
+				"WV": "#West Virginia",
+				"WI": "#Wisconsin",
+				"WY": "#Wyoming"
+			}
+		}
+	},
+	"pages": [
+		{
+			"id": 1,
+			"key": "welcome",
+			"description": "Welcome",
+			"components": [
+
+
+				{
+					"common": {
+						"type": "InputEmail",
+						"model": "email",
+						"enable": true
+					},
+					"validation": {
+						"required": true,
+						"pattern": "/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/",
+						"texts": {
+							"required": "errors.required",
+							"pattern": "#Please enter a valid email address"
+						}
+					},
+					"text": {
+						"placeholder": "#name@company.com",
+						"label": "#E-mail address"
+					}
+				}
+
+			]
+		},
+
+		{
+			"id": 2,
+			"key": "terms",
+			"description": "Terms and Conditions",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#Terms and conditions"
+					}
+				}
+			]
+		},
+
+		{
+			"id": 3,
+			"key": "driver-application-confirm",
+			"description": "Driver Application, readonly fields",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#driver application confirm"
+					}
+				}
+			]
+		},
+
+		{
+			"id": 4,
+			"key": "personal-information-text",
+			"description": "Personal information text",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#FMCSA notification of driver's rights"
+					}
+				}
+			]
+		},
+
+		{
+			"id": 5,
+			"key": "personal-information",
+			"description": "Personal Information form",
+			"submitActionUrl1": "form/personal-information",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#Personal information"
+					}
+				},
+				{
+					"common": {
+						"type": "MultiBox",
+						"model": "driversLicenses"
+					},
+					"text": {
+						"addButton": "#Add another driver's license"
+					},
+					"components": [
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"type": "Selector",
+										"model": "licenseState"
+									},
+									"custom": {
+										"options": "$:selectorCountryList",
+										"defaultText": "#Select D.L. state"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Driver's license state *"
+									}
+								},
+								{
+									"common": {
+										"type": "InputText",
+										"model": "number"
+									},
+									"custom": {
+										"pattern": "/^.{0,20}$/"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Driver's license number"
+									}
+								}
+							]
+						},
+
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"enable": true,
+										"type": "InputDate",
+										"model": "expirationDate"
+									},
+									"custom": {
+										"mask": "##/##/####",
+										"hint": "#format: mm/dd/yyyy"
+									},
+									"module": {
+										"minDate": "01/01/1920",
+										"maxDate": "01/01/2005"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required",
+											"range": "#The date falls outside of the acceptable range. From 01/01/1920 to 01/01/2005",
+											"notValid": "#This is not a valid date."
+										}
+									},
+									"text": {
+										"placeholder": "#example: 12/25/2000",
+										"label": "#Expiration date D.L."
+									}
+								},
+								{
+									"common": {
+										"enable": true,
+										"type": "Selector",
+										"model": "licenseType"
+									},
+									"custom": {
+										"options": {
+											"State": "#State",
+											"CDL": "#CDL",
+											"CLP": "#CLP"
+										},
+										"defaultText": "#Select type/class"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Type/Class *"
+									}
+								}
+							]
+						},
+
+						{
+							"common": {
+								"type": "Checkbox",
+								"model": "currentLicense",
+								"class": {
+									"container": "col-6 --col-middle",
+									"element": "checkbox-only-one-active"
+								}
+							},
+							"custom": {
+								"bodyHTML": "#Is this a current license?",
+								"actions": {
+									"check": {
+										"action": {
+											"type": "UNCHECK_ANOTHERS",
+											"container": ".checkbox-only-one-active"
+										}
+									}
+								}
+							}
+						}
+					]
+				},
+
+				{
+					"common": {
+						"type": "InputText",
+						"model": "socialSecurityNumber",
+						"class": {
+							"container": "col-9 col-8-sm --col-middle"
+						}
+					},
+					"custom": {
+						"mask": "###-##-####"
+					},
+					"validation": {
+						"required": true,
+						"pattern": "/^\\d{3}-\\d{2}-\\d{4}$/",
+						"texts": {
+							"required": "errors.required",
+							"pattern": "#Please enter a valid social security number"
+						}
+					},
+					"text": {
+						"placeholder": "#123-45-6789",
+						"label": "#Social security number"
+					}
+				},
+
+				{
+					"common": {
+						"type": "ButtonSubmit",
+						"class": {
+							"container": "col-5 col-5-sm --col-middle"
+						}
+					},
+					"text": {
+						"value": "#Submit"
+					}
+				}
+			]
+		},
+
+		{
+			"id": 6,
+			"key": "work-history",
+			"description": "work history",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#Work history"
+					}
+				},
+				{
+					"common": {
+						"type": "Radiobuttons",
+						"model": "hasBeenCreDriver",
+						"class": {
+							"container": "--radio-space-evenly col-9 col-10-sm --col-middle"
+						}
+					},
+					"custom": {
+						"defaultValue": "no",
+						"options": [
+							{
+								"value": "yes",
+								"text": "#Yes"
+							},
+							{
+								"value": "no",
+								"text": "#No"
+							}
+						]
+					},
+					"text": {
+						"label": "#Have you ever been employed as a company driver or independent contractor for Truck Global?"
+					}
+				},
+				{
+					"common": {
+						"type": "Radiobuttons",
+						"model": "hasTruckDrivingSchool",
+						"class": {
+							"container": "--radio-space-evenly col-9 col-10-sm --col-middle"
+						}
+					},
+					"custom": {
+						"defaultValue": "no",
+						"options": [
+							{
+								"value": "yes",
+								"text": "#Yes"
+							},
+							{
+								"value": "no",
+								"text": "#No"
+							}
+						]
+					},
+					"text": {
+						"label": "#Have you ever been to any truck driving school in the last 5 years?"
+					}
+				},
+				{
+					"common": {
+						"type": "Radiobuttons",
+						"model": "hasFailedDrugScreen",
+						"class": {
+							"container": "--radio-space-evenly col-9 col-10-sm --col-middle"
+						}
+					},
+					"custom": {
+						"defaultValue": "no",
+						"options": [
+							{
+								"value": "yes",
+								"text": "#Yes"
+							},
+							{
+								"value": "no",
+								"text": "#No"
+							}
+						]
+					},
+					"text": {
+						"label": "#Have you ever failed or refused a DOT drug screen?"
+					}
+				},
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "p"
+					},
+					"text": {
+						"value": "#Please provide the last 10 years of work history"
+					}
+				},
+				{
+					"common": {
+						"type": "MultiBox",
+						"model": "workRecords"
+					},
+					"custom": {
+						"title": "pages.work-history.employer-#",
+						"addIndex": true
+					},
+					"text": {
+						"addButton": "#Add another employer"
+					},
+					"components": [
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "companyName"
+									},
+									"custom": {
+										"pattern": "/^.{0,99}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Company name"
+									}
+								},
+
+								{
+									"common": {
+										"type": "InputText",
+										"model": "jobTitle"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Job title"
+									}
+								}
+							]
+						},
+
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"enable": true,
+										"type": "InputDate",
+										"model": "startDate"
+									},
+									"custom": {
+										"mask": "##/##/####",
+										"hint": "#format: mm/dd/yyyy",
+										"workTogether": {
+											"selfIdentify": "START",
+											"purposeModel": "endDate",
+											"validateText": "#Start date can't be bigger than finish date."
+										}
+									},
+									"module": {
+										"minDate": "01/01/1920"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required",
+											"range": "#The date falls outside of the acceptable range.",
+											"notValid": "#This is not a valid date."
+										}
+									},
+									"text": {
+										"placeholder": "#example: 12/25/2000",
+										"label": "#Start date"
+									}
+								},
+								{
+									"common": {
+										"enable": true,
+										"type": "InputDate",
+										"model": "endDate"
+									},
+									"custom": {
+										"mask": "##/##/####",
+										"hint": "#format: mm/dd/yyyy",
+										"workTogether": {
+											"selfIdentify": "END",
+											"purposeModel": "startDate",
+											"validateText": "#Finish date can't be smaller than start date"
+										}
+									},
+									"module": {
+										"minDate": "01/01/1920"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required",
+											"range": "#The date falls outside of the acceptable range.",
+											"notValid": "#This is not a valid date."
+										}
+									},
+									"text": {
+										"placeholder": "#example: 12/25/2000",
+										"label": "#End date"
+									}
+								}
+							]
+						},
+
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"enable": true,
+								"class": {
+									"container": "g-3-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "city"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#City"
+									}
+								},
+								{
+									"common": {
+										"type": "Selector",
+										"model": "state"
+									},
+									"custom": {
+										"options": "$:selectorCountryList",
+										"defaultText": "#Select Your state"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#State *"
+									}
+								},
+								{
+									"common": {
+										"type": "InputText",
+										"model": "zipCode"
+									},
+									"custom": {
+										"pattern": "/^.{0,35}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "",
+										"label": "#Zip code"
+									}
+								}
+							]
+						},
+
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "g-2-cols"
+								}
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_1"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#street, P.O. box, company",
+										"label": "#Address line 1"
+									}
+								},
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_2"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#building, unit, floor, etc",
+										"label": "#Address line 2"
+									}
+								}
+							]
+						},
+						{
+							"common": {
+								"type": "InputText",
+								"model": "phoneNumber"
+							},
+							"custom": {
+								"mask": "(###) ###-####"
+							},
+							"text": {
+								"placeholder": "#(555) 555-5555",
+								"label": "#Phone number"
+							},
+							"validation": {
+								"required": true,
+								"pattern": "/^\\(\\d{3}\\) \\d{3}-\\d{4}$/",
+								"texts": {
+									"required": "errors.required"
+								}
+							}
+						},
+						{
+							"common": {
+								"type": "Textarea",
+								"model": "description"
+							},
+							"custom": {
+								"rows": 5,
+								"pattern": "/^.{0,320}$/i"
+							},
+							"text": {
+								"label": "#Description"
+							},
+							"validation": {
+								"required": true,
+								"texts": {
+									"required": "errors.required"
+								}
+							}
+						},
+						{
+							"common": {
+								"type": "Selector",
+								"model": "reasonForLeaving"
+							},
+							"custom": {
+								"options": {
+									"LaidOff": "#Laid off",
+									"LeaveOfAbsense": "#Leave of absense",
+									"OutOfBusiness": "#Out of business",
+									"PresentEmployer": "#Present employer",
+									"Quit": "#Quit",
+									"Reassigned": "#Reassigned",
+									"Relocation": "#Relocation",
+									"Retired": "#Retired",
+									"Terminated": "#Terminated",
+									"TermServiceEnd": "#Term service end"
+								},
+								"defaultText": "#Select Your reason"
+							},
+							"validation": {
+								"required": true,
+								"texts": {
+									"required": "errors.required"
+								}
+							},
+							"text": {
+								"label": "#Reason for leaving *"
+							}
+						},
+						{
+							"common": {
+								"type": "Radiobuttons",
+								"model": "isDrivingJob",
+								"class": {
+									"container": "--radio-space-evenly col-9 col-10-sm --col-middle"
+								}
+							},
+							"custom": {
+								"defaultValue": "yes",
+								"options": [
+									{
+										"value": "yes",
+										"text": "#Yes",
+										"action": {
+											"type": "SHOW_CONTAINER",
+											"nextSibling": 1
+										}
+									},
+									{
+										"value": "no",
+										"text": "#No",
+										"action": {
+											"type": "HIDE_CONTAINER",
+											"nextSibling": 1
+										}
+									}
+								]
+							},
+							"text": {
+								"label": "#Did you operate a commercial motor vehicle for this job?"
+							}
+						},
+						{
+							"common": {
+								"type": "LayoutContainer",
+								"class": {
+									"container": "col-9 col-10-sm --col-middle"
+								}
+							},
+
+							"components": [
+								{
+									"common": {
+										"type": "Selector",
+										"model": "typeOfEquipment"
+									},
+									"custom": {
+										"options": {
+											"StraightTruck": "#Straight Truck",
+											"TractorAndSemiTrailers": "#Tractor and Semi Trailers",
+											"TractorAndTwoTrailers": "#Tractor and Two Trailers",
+											"Other": "#Other"
+										},
+										"defaultText": "#Select equipment type"
+									},
+									"validation": {
+										"required": true,
+										"requiredOnlyIfVisible": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"label": "#Type of equipment You operated *"
+									}
+								},
+								{
+									"common": {
+										"type": "Radiobuttons",
+										"model": "trailerLength",
+										"class": {
+											"container": "--radio-space-evenly"
+										}
+									},
+									"custom": {
+										"defaultValue": "over40Feet",
+										"options": [
+											{
+												"value": "under40Feet",
+												"text": "#Under 40 feet"
+											},
+											{
+												"value": "over40Feet",
+												"text": "#Over 40 feet"
+											}
+										]
+									},
+									"text": {
+										"label": "#Trailer length?"
+									}
+								},
+								{
+									"common": {
+										"type": "Radiobuttons",
+										"model": "subjectToFMCSR",
+										"class": {
+											"container": "--radio-space-evenly"
+										}
+									},
+									"custom": {
+										"defaultValue": "yes",
+										"options": [
+											{
+												"value": "yes",
+												"text": "#Yes"
+											},
+											{
+												"value": "no",
+												"text": "#No"
+											}
+										]
+									},
+									"text": {
+										"label": "#Were you subject to the FMCSR?"
+									}
+								},
+								{
+									"common": {
+										"type": "TextContainer",
+										"class": {
+											"container": "field-inform-text"
+										}
+									},
+									"custom": {
+										"tag": "p"
+									},
+									"text": {
+										"value": "#The information you provide here may be used, and your previous employers will be contacted"
+									}
+								}
+							]
+						}
+					]
+				},
+				{
+					"common": {
+						"type": "ButtonSubmit",
+						"class": {
+							"container": "col-5 col-5-sm --col-middle"
+						}
+					},
+					"text": {
+						"value": "#Submit"
+					}
+				}
+			]
+		},
+
+		{
+			"id": 7,
+			"key": "complete",
+			"description": "complete",
+			"components": [
+				{
+					"common": {
+						"type": "TextContainer",
+						"class": {
+							"container": "--center"
+						}
+					},
+					"custom": {
+						"tag": "h2"
+					},
+					"text": {
+						"value": "#Complete"
+					}
+				},
+				{
+					"common": {
+						"type": "LayoutColumns"
+					},
+					"components": [
+						{
+							"common": {
+								"type": "LayoutColumn"
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_1"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#building, unit, floor, etc",
+										"label": "#Address line 1"
+									}
+								}
+							]
+						},
+						{
+							"common": {
+								"type": "LayoutColumn"
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_2"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#building, unit, floor, etc",
+										"label": "#Address line 2"
+									}
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"common": {
+						"type": "LayoutColumns"
+					},
+					"components": [
+						{
+							"common": {
+								"type": "LayoutColumn"
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_1"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#building, unit, floor, etc",
+										"label": "#Address line 1"
+									}
+								}
+							]
+						},
+						{
+							"common": {
+								"type": "LayoutColumn"
+							},
+							"components": [
+								{
+									"common": {
+										"type": "InputText",
+										"model": "address_2"
+									},
+									"custom": {
+										"pattern": "/^.{0,40}$/i"
+									},
+									"validation": {
+										"required": true,
+										"texts": {
+											"required": "errors.required"
+										}
+									},
+									"text": {
+										"placeholder": "#building, unit, floor, etc",
+										"label": "#Address line 2"
+									}
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

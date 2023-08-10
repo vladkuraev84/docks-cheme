@@ -8,7 +8,8 @@
         }
     },
     "plugins": [
-        "language-picker"
+        "language-picker",
+        "include-html"
     ],
     "pluginsConfig": {
         "language-picker": {

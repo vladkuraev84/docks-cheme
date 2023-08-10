@@ -1,4 +1,6 @@
 # Checkbox
 
-> Текст для Checkbox.
+> Checkbox.
+
+
 

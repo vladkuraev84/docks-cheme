@@ -1,0 +1,41 @@
+{
+	"en": {
+		"driver application": "Driver Application",
+		"add": "Add",
+		"menu": {
+			"welcome": "Welcome page",
+			"terms": "Terms and Conditions",
+			"personal": "Personal Information",
+			"work-history": "Work History",
+			"complete": "Complete page"
+		},
+
+		"pages": {
+			"work-history": {
+				"employer-#": "Employer #"
+			}
+		},
+		"errors": {
+			"required": "This field is required"
+		}
+	},
+	"fr": {
+		"driver application": "Driver Application",
+		"menu": {
+			"welcome": "Page d'accueil",
+			"terms": "Page Termes et Conditions",
+			"complete": "Page complète"
+		}
+	},
+	"ua": {
+		"driver application": "Driver Application"
+	},
+	"ru": {
+		"driver application": "Driver Application",
+		"pages": {
+			"work-history": {
+				"employer-#": "Работа #"
+			}
+		}
+	}
+}

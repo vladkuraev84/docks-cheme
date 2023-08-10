@@ -1,4 +1,4 @@
 # InputDate
 
-> Текст для InputDate.
+> DatePicker.
 
