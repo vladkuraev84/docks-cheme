@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="1">
     <title>Title</title>
 
     <link rel="stylesheet" href="./assets/css/site.css" />
     <link rel="stylesheet" href="./assets/widget/main.css" />
     <script src="./assets/js/site.js" defer></script>
-    <script src="./assets/widget/widget-form-loader.min.js" defer></script>
-    <script src="./assets/widget/form-widget-g.js" defer></script>
+    <script src="./assets/widget/widget-form-loader.min.js?v=2" defer></script>
+    <script src="./assets/widget/form-widget-g.js?v=2" defer></script>
 </head>
 <body>
 
@@ -33,9 +36,13 @@
         <div class="footer">
             <p>&copy; <span id="year"></span> Company Global.</p>
         </div>
-
     </div>
 </div>
-
+<script>
+    window.location.reload();
+    setTimeout(function(){
+        location.reload();
+    }, 500);
+</script>
 </body>
 </html>
