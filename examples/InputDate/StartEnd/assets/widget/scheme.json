@@ -120,9 +120,7 @@
 			"id": 61,
 			"key": "wh",
 			"description": "wh",
-
 			"components": [
-
 				{
 					"common": {
 						"type": "LayoutContainer",
@@ -196,7 +194,6 @@
 					]
 				}
 			]
-
 		}
 	]
 }

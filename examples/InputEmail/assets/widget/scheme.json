@@ -121,8 +121,6 @@
 			"key": "w",
 			"description": "W",
 			"components": [
-
-
 				{
 					"common": {
 						"type": "InputEmail",
@@ -142,7 +140,6 @@
 						"label": "#E-mail address"
 					}
 				}
-
 			]
 		}
 	]
