@@ -18,21 +18,6 @@
 						"todayHighlight": true
 					}
 				}
-			},
-			{
-				"name": "menu",
-				"enable": false,
-				"config": {
-					"list": [
-						{
-							"id": 61,
-							"pageId": 61,
-							"position": 61,
-							"enable": true,
-							"title": "menu.work-history"
-						}
-					]
-				}
 			}
 		],
 		"apiBaseUrl": "http://localhost:8081/api/",
