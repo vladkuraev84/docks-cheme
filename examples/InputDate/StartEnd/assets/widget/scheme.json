@@ -3,18 +3,6 @@
 		"step_by_step": "strict",
 		"modules": [
 			{
-				"name": "auth",
-				"enable": false
-			},
-			{
-				"name": "sign",
-				"enable": false
-			},
-			{
-				"name": "pay",
-				"enable": false
-			},
-			{
 				"name": "datepicker",
 				"enable": true,
 				"config": {
