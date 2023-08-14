@@ -20,6 +20,7 @@
   * [Checkbox](jsons/scheme/pages/Checkbox/README.md)
 * [JSONS Конфиг](jsons/scheme/config/README.md)
   * [Модуль Menu](jsons/scheme/config/Menu/README.md)
+  * [Переводы](jsons/scheme/config/Languages/README.md)
 
 ### Мультиязычность
 
