@@ -21,6 +21,7 @@
 * [JSONS Конфиг](jsons/scheme/config/README.md)
   * [Модуль Menu](jsons/scheme/config/Menu/README.md)
   * [Переводы](jsons/scheme/config/Languages/README.md)
+* [Подключение Формы](CONNECTFORM.md)
 
 ### Мультиязычность
 
