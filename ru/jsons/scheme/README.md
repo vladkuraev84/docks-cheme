@@ -4,7 +4,7 @@
 * config;
 * pages.
 
-```
+```json
 {
 	"config": {
 		"step_by_step": "",
