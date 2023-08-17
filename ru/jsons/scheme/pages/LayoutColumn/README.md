@@ -1,4 +1,0 @@
-# LayoutColumn
-
-> Текст для LayoutColumn.
-

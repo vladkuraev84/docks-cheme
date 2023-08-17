@@ -1,4 +1,0 @@
-# LayoutContainer
-
-> Текст для LayoutContainer.
-
