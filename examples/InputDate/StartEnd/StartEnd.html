@@ -12,103 +12,28 @@
 		<script src="./assets/widget/widget-form-loader.min.js" defer></script>
 	</head>
 	<body>
-		<table style="width: 100%;table-layout: fixed;">
-			<tbody>
-				<tr>
-					<td>
-						<div class="wrapper">
-							<div class="content">
-								<header class="header">
-									<button class="btn-theme" onclick="changeTheme()">
-										<span class="--light">&#9728;</span>
-										<span class="--dark">&#9789;</span>
-									</button>
-								</header>
+		<div class="wrapper">
+			<div class="content">
+				<header class="header">
+					<button class="btn-theme" onclick="changeTheme()">
+						<span class="--light">&#9728;</span>
+						<span class="--dark">&#9789;</span>
+					</button>
+				</header>
 
-								<form-widget-g
-										data-project-id="12508e2544f0831be0b66a0b"
-										data-path="./assets/widget"
-										data-page="wh"
-										data-language="en"
-										data-theme="light"
-										data-dump-model="true"
-								></form-widget-g>
+				<form-widget-g
+					data-project-id="12508e2544f0831be0b66a0b"
+					data-path="./assets/widget"
+					data-page="wh"
+					data-language="en"
+					data-theme="light"
+					data-dump-model="true"
+				></form-widget-g>
 
-								<div class="footer">
-									<p>&copy; <span id="year"></span> Company Global.</p>
-								</div>
-							</div>
-						</div>
-					</td>
-					<td>
-						<pre style="font-size: 10px;">
-							{
-								"common": {
-									"enable": true,
-									"type": "InputDate",
-									"model": "startDate"
-								},
-								"custom": {
-									"mask": "##/##/####",
-									"hint": "#формат: mm/dd/yyyy",
-									"workTogether": {
-										"selfIdentify": "START",
-										"purposeModel": "endDate",
-										"validateText": "#Начальная дата не может быть старше конечной."
-									}
-								},
-								"module": {
-									"minDate": "01/01/1920"
-								},
-								"validation": {
-									"required": true,
-									"texts": {
-										"required": "#Обязательное поле",
-										"range": "#Дата выходит за пределы допустимого диапазона.",
-										"notValid": "#Это недопустимая дата."
-									}
-								},
-								"text": {
-									"placeholder": "#пример: 12/25/2000",
-									"label": "#Стартовая дата"
-								}
-							},
-							{
-								"common": {
-									"enable": true,
-									"type": "InputDate",
-									"model": "endDate"
-								},
-								"custom": {
-									"mask": "##/##/####",
-									"hint": "#формат: mm/dd/yyyy",
-									"workTogether": {
-										"selfIdentify": "END",
-										"purposeModel": "startDate",
-										"validateText": "#Дата окончания не может быть меньше даты начала"
-									}
-								},
-								"module": {
-									"minDate": "01/01/1920"
-								},
-								"validation": {
-									"required": true,
-									"texts": {
-										"required": "#Обязательное поле",
-										"range": "#Дата выходит за пределы допустимого диапазона.",
-										"notValid": "#Это недопустимая дата."
-									}
-								},
-								"text": {
-									"placeholder": "#пример: 12/25/2000",
-									"label": "#Конечная дата"
-								}
-							}
-						</pre>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
+				<div class="footer">
+					<p>&copy; <span id="year"></span> Company Global.</p>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
