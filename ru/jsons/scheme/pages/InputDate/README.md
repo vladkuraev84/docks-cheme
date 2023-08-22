@@ -1,7 +1,164 @@
 # InputDate
 
-> DatePicker.
+> Компонент "InputDate" предоставляет возможность ввода даты с использованием календаря. Опции этого компонента позволяют настраивать его поведение согласно официальной документации для библиотеки DatePicker. https://mymth.github.io/vanillajs-datepicker/
+
+
+Пожалуйста, обратите внимание, что для корректной работы компонента **"InputDate"** в схеме компонентов, необходимо активировать и настроить модуль **"datepicker"** в **"config"**.
+
+### Инициализация DatePicker
+
+Перед использованием компонента **"InputDate"**, необходимо инициализировать модуль **"datepicker"** в вашем приложении. Для этого добавьте соответствующие настройки в **"config"** в массив **"modules"**:
+
+```json
+{
+  "config": {
+    "modules": [
+      {
+        "name": "datepicker",
+        "enable": true,
+        "config": {
+          "locales": {
+            "relations": {
+              "ua": "uk",
+              "fr": "fr"
+            }
+          },
+          "forEachField": {
+            "format": "mm/dd/yyyy",
+            "autohide": true,
+            "todayHighlight": true
+          }
+        }
+      }
+    ]
+  }
+}
+```
+
+- **"enable"**: Если установить в значение "false", не будут загружены дополнительные файлы для модуля DatePicker.
+- **forEachField**: Все опции в этом объекте будет применены к каждому **"InputDate"**. Тоже самое если бы вы в каждом компоненте **"InputDate"** в module схемы указывали эти опции, в данном конфиге можно основные параметры указать глобально и не засорять каждый компонент с датой.
+
+При загрузке страницы, приложение смотрит все активные языки вашего сайта, по пути в схеме, config.localization.availableLangs ["en", "fr", "ua", "ru"] и дальше будет загружать эти локали, но допустим ключ языка не сопадает со списком локалей из **"datepicker"**. В таком случае вы можете указать необходимое соответствие в объекте где ключ является значением из вашего списка активных языков ["en", "fr", "ua", "ru"], а значение является языком из списка datepicker (https://github.com/uxsolutions/bootstrap-datepicker/tree/master/dist/locales) :
+
+```json
+{
+  "relations": {
+    "ua": "uk",
+    "fr": "fr"
+  }
+}
+```
+
+Опции для даты разработаны по нескольким принципам: привычный для всех выбор одной даты, установление максимальной границы даты, начало-конец периода(к примеру: с 22.07.2020 до 30.08.2021).
+
+Ниже приведены примеры для опций.
+
+```json
+{
+    "common": {
+        "type": "InputDate",
+        "model": "birthDate",
+        "enable": true
+    },
+    "custom": {
+        "mask": "##/##/####",
+        "hint": "#формат: mm/dd/yyyy"
+    },
+    "module": {
+        "minDate": "01/01/1920",
+        "maxDate": "01/01/2005"
+    },
+    "validation": {
+        "required": true,
+        "texts": {
+            "required": "#Обязательное поле",
+            "range": "#Дата выходит за пределы допустимого диапазона. С 01.01.1920 по 01.01.2005",
+            "notValid": "#This is not a valid date."
+        }
+    },
+    "text": {
+        "placeholder": "#пример: 01/25/1963",
+        "label": "#Дата рождения"
+    }
+}
+```
+
+Если удалить строку **"maxDate"** в **"module"** тогда не будет ограничения выбора максимальной конечной даты.
+
+### Опции для компонента "InputDate"
+
+- **"custom"**: Настройки для пользовательских параметров компонента.
+- **"module"**: Настройки для параметров модуля DatePicker.
+- **"validation"**: Настройки для валидации компонента.
+- **"text"**: Текстовые параметры компонента.
+
+**InputDate** с **стартовой** датой и **конечной**:
 
 <iframe  frameborder="0"
 style=" width: 100%; height: 415px" src="https://docks-demo.netlify.app/examples/InputDate/StartEnd/startEnd.html">
 </iframe>
+
+```json
+{
+    "common": {
+        "enable": true,
+        "type": "InputDate",
+        "model": "startDate"
+    },
+    "custom": {
+        "mask": "##/##/####",
+        "hint": "#формат: mm/dd/yyyy",
+        "workTogether": {
+            "selfIdentify": "START",
+            "purposeModel": "endDate",
+            "validateText": "#Начальная дата не может быть старше конечной."
+        }
+    },
+    "module": {
+        "minDate": "01/01/1920"
+    },
+    "validation": {
+        "required": true,
+        "texts": {
+            "required": "#Обязательное поле",
+            "range": "#Дата выходит за пределы допустимого диапазона.",
+            "notValid": "#Это недопустимая дата."
+        }
+    },
+    "text": {
+        "placeholder": "#пример: 12/25/2000",
+        "label": "#Стартовая дата"
+    }
+},
+{
+    "common": {
+        "enable": true,
+        "type": "InputDate",
+        "model": "endDate"
+    },
+    "custom": {
+        "mask": "##/##/####",
+        "hint": "#формат: mm/dd/yyyy",
+        "workTogether": {
+            "selfIdentify": "END",
+            "purposeModel": "startDate",
+            "validateText": "#Дата окончания не может быть меньше даты начала"
+        }
+    },
+    "module": {
+        "minDate": "01/01/1920"
+    },
+    "validation": {
+        "required": true,
+        "texts": {
+            "required": "#Обязательное поле",
+            "range": "#Дата выходит за пределы допустимого диапазона.",
+            "notValid": "#Это недопустимая дата."
+        }
+    },
+    "text": {
+        "placeholder": "#пример: 12/25/2000",
+        "label": "#Конечная дата"
+    }
+}
+```
