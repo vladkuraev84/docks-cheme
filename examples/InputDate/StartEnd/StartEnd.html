@@ -12,8 +12,8 @@
 		<script src="./assets/widget/widget-form-loader.min.js" defer></script>
 	</head>
 	<body>
-		<div style="display: flex;">
-			<div class="wrapper" style="flex: 1">
+		<div style="display: flex; flex-wrap: wrap">
+			<div class="wrapper" style="flex: 1; min-width: 540px;">
 				<div class="content">
 					<header class="header">
 						<button class="btn-theme" onclick="changeTheme()">
@@ -36,10 +36,10 @@
 					</div>
 				</div>
 			</div>
-			<div style="flex: 1">
-				<pre style="font-size: 12px">
+			<div style="flex: 1; min-width: 300px;">
+				<pre style="font-size: 12px; tab-size: 1;">
 					{
-						"common": {
+						<span style="color: blue;">"common"</span>: {
 							"enable": true,
 							"type": "InputDate",
 							"model": "startDate"
