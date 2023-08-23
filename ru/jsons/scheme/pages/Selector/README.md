@@ -67,7 +67,7 @@
 {
   "config": {
     "variables": {
-      "selectorList": {
+      "variableName": {
         "Op1": "Option1",
         "Op2": "Option2",
         "Op3": "Option3"
