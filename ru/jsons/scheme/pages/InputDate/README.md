@@ -97,67 +97,130 @@
 style=" width: 100%; height: 415px;" src="https://docks-demo.netlify.app/examples/InputDate/StartEnd/startEnd.html">
 </iframe>
 
-```json
-{
-    "common": {
-        "enable": true,
-        "type": "InputDate",
-        "model": "startDate"
-    },
-    "custom": {
-        "mask": "##/##/####",
-        "hint": "#формат: mm/dd/yyyy",
-        "workTogether": {
-            "selfIdentify": "START",
-            "purposeModel": "endDate",
-            "validateText": "#Начальная дата не может быть старше конечной."
-        }
-    },
-    "module": {
-        "minDate": "01/01/1920"
-    },
-    "validation": {
-        "required": true,
-        "texts": {
-            "required": "#Обязательное поле",
-            "range": "#Дата выходит за пределы допустимого диапазона.",
-            "notValid": "#Это недопустимая дата."
-        }
-    },
-    "text": {
-        "placeholder": "#пример: 12/25/2000",
-        "label": "#Стартовая дата"
-    }
-},
-{
-    "common": {
-        "enable": true,
-        "type": "InputDate",
-        "model": "endDate"
-    },
-    "custom": {
-        "mask": "##/##/####",
-        "hint": "#формат: mm/dd/yyyy",
-        "workTogether": {
-            "selfIdentify": "END",
-            "purposeModel": "startDate",
-            "validateText": "#Дата окончания не может быть меньше даты начала"
-        }
-    },
-    "module": {
-        "minDate": "01/01/1920"
-    },
-    "validation": {
-        "required": true,
-        "texts": {
-            "required": "#Обязательное поле",
-            "range": "#Дата выходит за пределы допустимого диапазона.",
-            "notValid": "#Это недопустимая дата."
-        }
-    },
-    "text": {
-        "placeholder": "#пример: 12/25/2000",
-        "label": "#Конечная дата"
-    }
-}
-```
+[//]: # (```json)
+
+[//]: # ({)
+
+[//]: # (    "common": {)
+
+[//]: # (        "enable": true,)
+
+[//]: # (        "type": "InputDate",)
+
+[//]: # (        "model": "startDate")
+
+[//]: # (    },)
+
+[//]: # (    "custom": {)
+
+[//]: # (        "mask": "##/##/####",)
+
+[//]: # (        "hint": "#формат: mm/dd/yyyy",)
+
+[//]: # (        "workTogether": {)
+
+[//]: # (            "selfIdentify": "START",)
+
+[//]: # (            "purposeModel": "endDate",)
+
+[//]: # (            "validateText": "#Начальная дата не может быть старше конечной.")
+
+[//]: # (        })
+
+[//]: # (    },)
+
+[//]: # (    "module": {)
+
+[//]: # (        "minDate": "01/01/1920")
+
+[//]: # (    },)
+
+[//]: # (    "validation": {)
+
+[//]: # (        "required": true,)
+
+[//]: # (        "texts": {)
+
+[//]: # (            "required": "#Обязательное поле",)
+
+[//]: # (            "range": "#Дата выходит за пределы допустимого диапазона.",)
+
+[//]: # (            "notValid": "#Это недопустимая дата.")
+
+[//]: # (        })
+
+[//]: # (    },)
+
+[//]: # (    "text": {)
+
+[//]: # (        "placeholder": "#пример: 12/25/2000",)
+
+[//]: # (        "label": "#Стартовая дата")
+
+[//]: # (    })
+
+[//]: # (},)
+
+[//]: # ({)
+
+[//]: # (    "common": {)
+
+[//]: # (        "enable": true,)
+
+[//]: # (        "type": "InputDate",)
+
+[//]: # (        "model": "endDate")
+
+[//]: # (    },)
+
+[//]: # (    "custom": {)
+
+[//]: # (        "mask": "##/##/####",)
+
+[//]: # (        "hint": "#формат: mm/dd/yyyy",)
+
+[//]: # (        "workTogether": {)
+
+[//]: # (            "selfIdentify": "END",)
+
+[//]: # (            "purposeModel": "startDate",)
+
+[//]: # (            "validateText": "#Дата окончания не может быть меньше даты начала")
+
+[//]: # (        })
+
+[//]: # (    },)
+
+[//]: # (    "module": {)
+
+[//]: # (        "minDate": "01/01/1920")
+
+[//]: # (    },)
+
+[//]: # (    "validation": {)
+
+[//]: # (        "required": true,)
+
+[//]: # (        "texts": {)
+
+[//]: # (            "required": "#Обязательное поле",)
+
+[//]: # (            "range": "#Дата выходит за пределы допустимого диапазона.",)
+
+[//]: # (            "notValid": "#Это недопустимая дата.")
+
+[//]: # (        })
+
+[//]: # (    },)
+
+[//]: # (    "text": {)
+
+[//]: # (        "placeholder": "#пример: 12/25/2000",)
+
+[//]: # (        "label": "#Конечная дата")
+
+[//]: # (    })
+
+[//]: # (})
+
+[//]: # (```)
