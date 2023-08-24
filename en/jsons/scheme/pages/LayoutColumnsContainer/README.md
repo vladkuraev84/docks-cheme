@@ -1,4 +1,0 @@
-# LayoutColumnsContainer
-
-> Текст для LayoutColumnsContainer.
-
