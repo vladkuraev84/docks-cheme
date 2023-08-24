@@ -4,7 +4,6 @@
     "description": "Documentation for Form-Builder",
     "links": {
         "sidebar": {
-            "Need help? Talk to us!": "https://test.com"
         }
     },
     "plugins": [
