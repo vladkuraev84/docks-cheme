@@ -17,3 +17,7 @@
 .book-langs-index .inner {
   max-width: 1400px;
 }
+
+.book-summary .summary li:last-child {
+  display: none !important;
+}
