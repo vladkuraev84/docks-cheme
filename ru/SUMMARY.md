@@ -8,7 +8,7 @@
 * [JSONS Элементы страницы](jsons/scheme/pages/README.md)
   * [Layouts](jsons/scheme/pages/Layouts/README.md)
   * [MultiBox](jsons/scheme/pages/MultiBox/README.md)
-  * [InputText_InputPassword](jsons/scheme/pages/InputText_InputPassword/README.md)
+  * [InputText-InputPassword](jsons/scheme/pages/InputText_InputPassword/README.md)
   * [InputEmail](jsons/scheme/pages/InputEmail/README.md)
   * [InputDate](jsons/scheme/pages/InputDate/README.md)
   * [Selector](jsons/scheme/pages/Selector/README.md)
