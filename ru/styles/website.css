@@ -1,0 +1,247 @@
+.book .book-body .page-wrapper .page-inner {
+    margin-bottom: 3em;
+    max-width: 1400px;
+    padding: 20px 90px 40px 90px;
+}
+
+.book-summary .summary >li:last-child, .book-header h1 {
+    display: none !important;
+}
+
+.markdown-section {
+    padding-bottom: 10px;
+}
+
+.markdown-section pre {
+    border-radius: 10px;
+    background: #343434;
+}
+
+.markdown-section pre>code {
+    color: #fffff5;
+}
+
+.markdown-section table {
+    width: calc(100% - 2px);
+    border-radius: 10px;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px #ddd;
+    overflow: hidden;
+    margin-left: 1px;
+    margin-right: 1px;
+    text-align: left;
+}
+
+.color-theme-2 .dropdown-menu {
+    border-radius: 6px;
+}
+
+.color-theme-2 .markdown-section table {
+    box-shadow: 0 0 0 1px #5a5a5a;
+}
+
+@media (max-width:1240px) {
+    .book .book-body .page-wrapper .page-inner {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .book.font-size-2 .book-body .page-inner section {
+        overflow-x: auto;
+    }
+}
+
+code {
+    border-radius: 4px;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+    width: 8px;
+    /* ширина для вертикального скролла */
+    height: 4px;
+    /* высота для горизонтального скролла */
+    background-color: #bbb5d4;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #b3aec6;
+    border-radius: 4px;
+    box-shadow: none;
+    border: 2.5px solid transparent;
+    background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #5c5673;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 1px 0 0 #cecece;
+    background: #cecece;
+}
+
+.book-summary ul.summary li a:hover {
+    color: #008cff;
+}
+
+.book-summary ul.summary li.active>a {
+    border-left: 4px solid #008cff;
+    font-weight: 900;
+}
+
+.alert {
+    /*  padding: 15px;
+      margin-bottom: 20px;
+      color: #444;
+      background: #eee;
+      border-bottom: 5px solid #ddd*/
+
+    border-radius: 10px;
+}
+
+.alert-success { /*hint style="tip"*/
+    /*  background: #dff0d8;
+      border-color: #d6e9c6;
+      color: #3c763d*/
+}
+
+.alert-info { /*hint style="info"*/
+    /*  background: #d9edf7;
+      border-color: #bce8f1;
+      color: #31708f*/
+}
+
+.alert-danger { /*hint style="danger"*/
+    /*  background: #f2dede;
+      border-color: #ebccd1;
+      color: #a94442*/
+}
+
+.alert-warning { /*hint style="working"*/
+    /*  background: #fcf8e3;
+      border-color: #faebcc;
+      color: #8a6d3b*/
+}
+
+.alert .hints-container p {
+    margin-bottom: 0;
+}
+
+.alert .hints-container p + p {
+    margin-top: .85em;
+}
+
+/* styles for copy */
+
+div.copy-block-wr {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+div.copy-block-wr span {
+    display: inline-block;
+    margin-right: 6px;
+}
+div.copy-block code {
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 6px;
+    background: #343434;
+    color: #fff;
+}
+div.copy-block button {
+    color: green;
+    box-sizing: border-box;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0);
+    padding: 5px 10px;
+    font-size: 0.8em;
+    border-radius: 4px;
+}
+div.copy-block button:hover {
+    background: rgba(65, 131, 196, 0.15);
+}
+
+/* end styles for copy */
+
+#book-search-results .search-results .has-results .search-results-item {
+    color: inherit;
+}
+
+.markdown-section .custom-navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.markdown-section .custom-navigation .navigation {
+    position: static;
+    width: 48%;
+    padding: 4px 10px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left;
+    max-width: 48%;
+}
+
+.color-theme-2 .markdown-section .custom-navigation .navigation  {
+    border-color: #5a5a5a;
+}
+
+.markdown-section .custom-navigation .navigation:hover .bottom-navigation--prev-label, .markdown-section .custom-navigation .navigation:hover .bottom-navigation--next-label {
+    color: #b9ca4a;
+}
+
+.markdown-section .custom-navigation .navigation +.navigation {
+    text-align: right;
+    margin-right: 0 !important;
+}
+
+.markdown-section .custom-navigation .navigation .bottom-navigation--prev-label, .markdown-section .custom-navigation .navigation .bottom-navigation--next-label {
+    font-weight: bold;
+}
+
+.book-body >.custom-navigation .navigation {
+    font-size: 0;
+    display: flex;
+    align-items: center;
+}
+
+.book-body >.custom-navigation .navigation >div {
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid #ddd;
+    border-right: 3px solid #ddd;
+}
+
+.book-body >.custom-navigation .navigation:hover {
+    border-top-color: #b9ca4a;
+    border-right-color: #b9ca4a;
+}
+
+.book-body >.custom-navigation .navigation.navigation-prev >div {
+    transform: rotate(-135deg);
+}
+
+.book-body >.custom-navigation .navigation.navigation-next >div {
+    transform: rotate(45deg);
+}
+
+@media (max-width:1240px) {
+    .book-body {
+        padding-bottom: 0;
+    }
+    .book-body >.custom-navigation {
+        display: none;
+    }
+}
+
+.book-summary ul.summary li.header {
+    text-transform: none;
+}

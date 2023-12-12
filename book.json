@@ -1,14 +1,16 @@
 {
     "gitbook": ">=3.2.0",
-    "title": "Form-Builder tutorial",
+    "title": "Scheme for NextFormJs tutorial",
     "description": "Documentation for Form-Builder",
     "links": {
         "sidebar": {
         }
     },
     "plugins": [
+        "hints",
         "language-picker",
-        "include-html"
+        "include-html",
+        "chapter-fold"
     ],
     "pluginsConfig": {
         "language-picker": {

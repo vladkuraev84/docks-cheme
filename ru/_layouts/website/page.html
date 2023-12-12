@@ -1,0 +1,40 @@
+{% extends template.self %}
+
+{% block header_nav %}
+
+{% endblock %}
+
+{% block page %}
+    {{ super() }}
+
+    {% block book_navigation %}
+    <div class="custom-navigation">
+        {% if page.previous and page.previous.path %}
+        <a href="{{ page.previous.path|resolveFile }}{{ page.previous.anchor }}"
+           class="bottom-navigation---prev-link navigation navigation-prev {% if not (page.next and page.next.path) %}navigation-unique{% endif %}"
+           aria-label="Previous page: {{ page.previous.title }}">
+            <div>
+                <div class="bottom-navigation--prev-sublabel">Previous</div>
+                <div class="bottom-navigation--prev-label">
+                    {{ page.previous.title }}
+                </div>
+            </div>
+        </a>
+        {% endif %}
+
+        {% if page.next and page.next.path %}
+        <a href="{{ page.next.path|resolveFile }}{{ page.next.anchor }}"
+           class="bottom-navigation---next-link navigation navigation-next {% if not (page.previous and page.previous.path) %}navigation-unique{% endif %}"
+           aria-label="Next page: {{ page.next.title }}">
+            <div>
+                <div class="bottom-navigation--next-sublabel">Next</div>
+                <div class="bottom-navigation--next-label">
+                    {{ page.next.title }}
+                </div>
+            </div>
+        </a>
+        {% endif %}
+    </div>
+    {% endblock %}
+
+{% endblock %}
